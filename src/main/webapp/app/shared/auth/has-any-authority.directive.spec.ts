@@ -3,6 +3,7 @@ jest.mock('app/core/auth/account.service');
 import { Component, ElementRef, WritableSignal, signal, viewChild } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
 import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/auth/account.model';
@@ -22,7 +23,7 @@ describe('HasAnyAuthorityDirective tests', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [HasAnyAuthorityDirective],
+      imports: [HasAnyAuthorityDirective, TranslateModule.forRoot()],
       declarations: [TestHasAnyAuthorityDirectiveComponent],
       providers: [provideHttpClient(), AccountService],
     });

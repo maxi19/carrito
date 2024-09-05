@@ -17,6 +17,7 @@ import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import './config/dayjs';
+import { TranslationModule } from 'app/shared/language/translation.module';
 import { httpInterceptorProviders } from './core/interceptor';
 import routes from './app.routes';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
@@ -48,9 +49,10 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(BrowserModule),
     // Set this to true to enable service worker (PWA)
     importProvidersFrom(ServiceWorkerModule.register('ngsw-worker.js', { enabled: false })),
+    importProvidersFrom(TranslationModule),
     provideHttpClient(withInterceptorsFromDi()),
     Title,
-    { provide: LOCALE_ID, useValue: 'en' },
+    { provide: LOCALE_ID, useValue: 'es' },
     { provide: NgbDateAdapter, useClass: NgbDateDayjsAdapter },
     httpInterceptorProviders,
     { provide: TitleStrategy, useClass: AppPageTitleStrategy },

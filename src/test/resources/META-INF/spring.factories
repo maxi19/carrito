@@ -1,2 +1,2 @@
-org.springframework.test.context.ContextCustomizerFactory = com.core.depot.\
+org.springframework.test.context.ContextCustomizerFactory = com.edu.carrito.web.\
     config.SqlTestContainersSpringContextCustomizerFactory

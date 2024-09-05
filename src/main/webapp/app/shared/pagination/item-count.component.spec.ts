@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
+
+import TranslateDirective from 'app/shared/language/translate.directive';
 
 import ItemCountComponent from './item-count.component';
 
@@ -8,7 +11,7 @@ describe('ItemCountComponent test', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ItemCountComponent],
+      imports: [ItemCountComponent, TranslateModule.forRoot(), TranslateDirective],
     }).compileComponents();
   }));
 
